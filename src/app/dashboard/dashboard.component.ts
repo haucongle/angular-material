@@ -1,33 +1,15 @@
-import {Component} from '@angular/core';
-import {DataService} from '../data/data.service';
-import {Line} from '../line';
-import {Observable} from 'rxjs';
-import {DataSource} from '@angular/cdk/table';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  displayedColumns = ['position', 'title'];
-  dataSource = new PostDataSource(this.dataService);
+  constructor() { }
 
-  constructor(
-    private dataService: DataService,
-  ) { }
-
-}
-
-export class PostDataSource extends DataSource<any> {
-  constructor(private dataService: DataService) {
-    super();
+  ngOnInit() {
   }
 
-  connect(): Observable<Line[]> {
-    return this.dataService.getData();
-  }
-
-  disconnect() { }
 }
