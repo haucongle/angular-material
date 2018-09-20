@@ -1,11 +1,8 @@
 import {Component} from '@angular/core';
 import {DataService} from '../data/data.service';
-import {Post} from '../post';
+import {Line} from '../line';
 import {Observable} from 'rxjs';
 import {DataSource} from '@angular/cdk/table';
-import {AuthService} from '../auth.service';
-import {PostDialogComponent} from '../post-dialog/post-dialog.component';
-import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,34 +11,13 @@ import {MatDialog} from '@angular/material';
 })
 export class DashboardComponent {
 
-  displayedColumns = ['date_posted', 'title', 'category', 'delete'];
+  displayedColumns = ['position', 'title'];
   dataSource = new PostDataSource(this.dataService);
 
   constructor(
     private dataService: DataService,
-    public auth: AuthService,
-    public dialog: MatDialog
   ) { }
 
-  deletePost(id) {
-    if (this.auth.isAuthenticated()) {
-      this.dataService.deletePost(id);
-      this.dataSource = new PostDataSource(this.dataService);
-    } else {
-      alert('Login in Before');
-    }
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(PostDialogComponent, {
-      width: '600px',
-      data: 'Add Post'
-    });
-    dialogRef.componentInstance.event.subscribe((result) => {
-      this.dataService.addPost(result.data);
-      this.dataSource = new PostDataSource(this.dataService);
-    });
-  }
 }
 
 export class PostDataSource extends DataSource<any> {
@@ -49,7 +25,7 @@ export class PostDataSource extends DataSource<any> {
     super();
   }
 
-  connect(): Observable<Post[]> {
+  connect(): Observable<Line[]> {
     return this.dataService.getData();
   }
 

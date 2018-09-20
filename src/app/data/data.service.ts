@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Post} from '../post';
+import {Line} from '../line';
 import {Observable} from 'rxjs';
 import 'rxjs/add/observable/of';
 
@@ -8,39 +8,15 @@ import 'rxjs/add/observable/of';
 })
 export class DataService {
 
-  ELEMENT_DATA: Post[] = [
-    {position: 0, title: 'Post One', category: 'Web Development', date_posted: new Date(), body: 'Body 1'},
-    {position: 1, title: 'Post Two', category: 'Android Development', date_posted: new Date(), body: 'Body 2'},
-    {position: 2, title: 'Post Three', category: 'IOS Development', date_posted: new Date(), body: 'Body 3'},
-    {position: 3, title: 'Post Four', category: 'Android Development', date_posted: new Date(), body: 'Body 4'},
-    {position: 4, title: 'Post Five', category: 'IOS Development', date_posted: new Date(), body: 'Body 5'},
-    {position: 5, title: 'Post Six', category: 'Web Development', date_posted: new Date(), body: 'Body 6'},
-  ];
-  categories = [
-    {value: 'Web-Development', viewValue: 'Web Development'},
-    {value: 'Android-Development', viewValue: 'Android Development'},
-    {value: 'IOS-Development', viewValue: 'IOS Development'}
+  ELEMENT_DATA: Line[] = [
+    {ext: 0, name: 'Line One'},
+    {ext: 1, name: 'Line Two'},
+    {ext: 2, name: 'Line Three'},
   ];
 
   constructor() { }
 
-  getData(): Observable<Post[]> {
-    return Observable.of<Post[]>(this.ELEMENT_DATA);
-  }
-
-  getCategories() {
-    return this.categories;
-  }
-
-  addPost(data) {
-    this.ELEMENT_DATA.push(data);
-  }
-
-  deletePost(index) {
-    this.ELEMENT_DATA = [...this.ELEMENT_DATA.slice(0, index), ...this.ELEMENT_DATA.slice(index + 1)];
-  }
-
-  dataLength() {
-    return this.ELEMENT_DATA.length;
+  getData(): Observable<Line[]> {
+    return Observable.of<Line[]>(this.ELEMENT_DATA);
   }
 }
