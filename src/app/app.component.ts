@@ -9,11 +9,11 @@ import * as faker from 'faker';
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     const el = document.createElement('output');
-    document.body.append(el);
+    document.getElementsByClassName('hovered-scrollbar--content')[0].append(el);
     Object.assign(el.style, {
       position: 'fixed',
       bottom: 0,
-      left: 0,
+      right: 0,
       background: 'green',
       color: 'white',
       padding: '5px',
