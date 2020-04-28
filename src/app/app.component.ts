@@ -9,6 +9,12 @@ import * as faker from 'faker';
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     document.addEventListener('contextmenu', (event) => event.preventDefault());
+    // document.addEventListener('scroll', () => {
+    //   const scrollbar = <HTMLElement>(
+    //     document.getElementsByClassName('hovered-scrollbar')[0]
+    //   );
+    //   scrollbar.style.visibility = 'visible';
+    // });
 
     const el = document.createElement('output');
     document.body.append(el);
