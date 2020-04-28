@@ -7,6 +7,8 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
+    document.addEventListener('contextmenu', (event) => event.preventDefault());
+
     const el = document.createElement('output');
     document.body.append(el);
     Object.assign(el.style, {
