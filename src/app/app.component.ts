@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import * as faker from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -143,5 +144,17 @@ export class AppComponent implements AfterViewInit {
     }
     window.addEventListener('resize', updateOutput);
     updateOutput();
+  }
+
+  getLoremSentence() {
+    return faker.lorem.sentence();
+  }
+
+  getLoremParagrapth() {
+    return faker.lorem.paragraph();
+  }
+
+  getLoremParagrapths() {
+    return faker.lorem.paragraphs();
   }
 }
