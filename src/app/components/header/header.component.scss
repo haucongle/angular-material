@@ -1,0 +1,27 @@
+:host {
+  top: 0;
+  margin: auto;
+  transform: none;
+  visibility: visible;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-content: center;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  width: 100%; /* For small screens */
+  max-width: 1140px; /* For large screens */
+  height: 55px;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+  border-right: 0;
+  z-index: 1;
+  position: fixed;
+  background-color: #ffffff;
+
+  .container {
+    margin-left: 65px;
+  }
+}
