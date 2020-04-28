@@ -6,9 +6,10 @@ body {
 }
 
 body {
-  width: 100%; /* For small screens */
+  width: calc(100% - 20px) !important; /* For small screens */
   max-width: 1140px; /* For large screens */
   margin: auto; /* Center the container in the viewport */
+  padding: 0 10px;
   font-family: Roboto, Helvetica, sans-serif;
   font-size: calc(12px + 0.35vw); /* Responsive base font size */
   line-height: calc(12px + 1.05vw); /* Responsive Vertical Rhythm */
