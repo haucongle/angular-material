@@ -9,7 +9,7 @@ import * as faker from 'faker';
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     const el = document.createElement('output');
-    document.getElementsByClassName('hovered-scrollbar--content')[0].append(el);
+    // document.getElementsByClassName('hovered-scrollbar--content')[0].append(el);
     Object.assign(el.style, {
       position: 'fixed',
       bottom: 0,
@@ -21,7 +21,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h1 = document.createElement('output');
-    document.getElementsByTagName('h1')[0].append(h1);
+    // document.getElementsByTagName('h1')[0].append(h1);
     Object.assign(h1.style, {
       background: 'red',
       color: 'white',
@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h2 = document.createElement('output');
-    document.getElementsByTagName('h2')[0].append(h2);
+    // document.getElementsByTagName('h2')[0].append(h2);
     Object.assign(h2.style, {
       background: 'red',
       color: 'white',
@@ -39,7 +39,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h3 = document.createElement('output');
-    document.getElementsByTagName('h3')[0].append(h3);
+    // document.getElementsByTagName('h3')[0].append(h3);
     Object.assign(h3.style, {
       background: 'red',
       color: 'white',
@@ -48,7 +48,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h4 = document.createElement('output');
-    document.getElementsByTagName('h4')[0].append(h4);
+    // document.getElementsByTagName('h4')[0].append(h4);
     Object.assign(h4.style, {
       background: 'red',
       color: 'white',
@@ -57,7 +57,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h5 = document.createElement('output');
-    document.getElementsByTagName('h5')[0].append(h5);
+    // document.getElementsByTagName('h5')[0].append(h5);
     Object.assign(h5.style, {
       background: 'red',
       color: 'white',
@@ -66,7 +66,7 @@ export class AppComponent implements AfterViewInit {
       opacity: 0.7,
     });
     const h6 = document.createElement('output');
-    document.getElementsByTagName('h6')[0].append(h6);
+    // document.getElementsByTagName('h6')[0].append(h6);
     Object.assign(h6.style, {
       background: 'red',
       color: 'white',
@@ -84,7 +84,7 @@ export class AppComponent implements AfterViewInit {
         fontSize: '11px',
         opacity: 0.7,
       });
-      pi.append(p);
+      // pi.append(p);
     }
 
     function updateOutput() {
