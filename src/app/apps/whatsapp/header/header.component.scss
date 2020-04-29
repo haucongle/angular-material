@@ -1,3 +1,5 @@
+@import '../../../shared/scss/whatsapp';
+
 :host {
   top: 0;
   margin: auto;
@@ -15,12 +17,12 @@
   justify-content: center;
   width: 100%; /* For small screens */
   max-width: 1140px; /* For large screens */
-  height: 55px;
-  box-shadow: 0 1px 1px rgba(0,0,0,.25);
+  height: 50px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   border-right: 0;
   z-index: 1;
   position: fixed;
-  background-color: #ffffff;
+  background-color: $teal-green;
 
   .container {
     margin-left: 65px;
