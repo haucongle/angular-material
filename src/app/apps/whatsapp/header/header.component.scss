@@ -22,9 +22,26 @@
   border-right: 0;
   z-index: 1;
   position: fixed;
+  color: $white-chocolate;
   background-color: $teal-green;
 
   .container {
-    margin-left: 65px;
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      a {
+        padding: 0;
+      }
+    }
+
+    .right {
+    }
   }
 }
