@@ -1,19 +1,47 @@
-<h1>H1 - {{ getLoremSentence() }}</h1>
-<p>{{ getLoremParagrapth() }}</p>
+<mat-card style="width: 640px; margin: 16px">
+  <mat-card-title>Video</mat-card-title>
+  <div
+    mat-card-image
+    plyr
+    plyrTitle="Custom video"
+    [plyrPlaysInline]="true"
+    [plyrCrossOrigin]="true"
+    [plyrPoster]="poster"
+    [plyrSources]="videoSources"
+    [plyrTracks]="tracks"
+    (plyrInit)="player = $event"
+  ></div>
+</mat-card>
 
-<h2>H2 - {{ getLoremSentence() }}</h2>
-<p>{{ getLoremParagrapth() }}</p>
+<mat-card style="width: 640px; margin: 16px">
+  <mat-card-title>Audio</mat-card-title>
+  <div
+    mat-card-image
+    plyr
+    plyrTitle="Audio"
+    plyrType="audio"
+    [plyrPlaysInline]="true"
+    [plyrCrossOrigin]="true"
+    [plyrSources]="audioSources"
+  ></div>
+</mat-card>
 
-<h3>H3 - {{ getLoremSentence() }}</h3>
-<p>{{ getLoremParagrapth() }}</p>
+<mat-card style="width: 640px; margin: 16px">
+  <mat-card-title>Youtube</mat-card-title>
+  <div
+    mat-card-image
+    plyr
+    plyrTitle="Video from Youtube"
+    [plyrSources]="youtubeSources"
+  ></div>
+</mat-card>
 
-<h4>H4 - {{ getLoremSentence() }}</h4>
-<p>{{ getLoremParagrapth() }}</p>
-
-<h5>H5 - {{ getLoremSentence() }}</h5>
-<p>{{ getLoremParagrapth() }}</p>
-
-<h6>H6 - {{ getLoremSentence() }}</h6>
-<p>{{ getLoremParagrapth() }}</p>
-
-<p *ngFor="let item of [].constructor(10)">{{ getLoremParagrapths() }}</p>
+<mat-card style="width: 640px; margin: 16px">
+  <mat-card-title>Vimeo</mat-card-title>
+  <div
+    mat-card-image
+    plyr
+    plyrTitle="Video from Vimeo"
+    [plyrSources]="vimeoSources"
+  ></div>
+</mat-card>

@@ -1,158 +1,85 @@
-import { Component, AfterViewInit } from '@angular/core';
-import * as faker from 'faker';
+import { Component } from '@angular/core';
+import { PlyrComponent } from 'ngx-plyr';
+import * as Plyr from 'plyr';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
-  ngAfterViewInit() {
-    const el = document.createElement('output');
-    document.body.append(el);
-    Object.assign(el.style, {
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      background: 'green',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h1 = document.createElement('output');
-    document.getElementsByTagName('h1')[0].append(h1);
-    Object.assign(h1.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h2 = document.createElement('output');
-    document.getElementsByTagName('h2')[0].append(h2);
-    Object.assign(h2.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h3 = document.createElement('output');
-    document.getElementsByTagName('h3')[0].append(h3);
-    Object.assign(h3.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h4 = document.createElement('output');
-    document.getElementsByTagName('h4')[0].append(h4);
-    Object.assign(h4.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h5 = document.createElement('output');
-    document.getElementsByTagName('h5')[0].append(h5);
-    Object.assign(h5.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
-    const h6 = document.createElement('output');
-    document.getElementsByTagName('h6')[0].append(h6);
-    Object.assign(h6.style, {
-      background: 'red',
-      color: 'white',
-      padding: '5px',
-      fontSize: '11px',
-      opacity: 0.7,
-    });
+export class AppComponent {
+  audioSources = [
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3',
+      type: 'audio/mp3',
+    },
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.ogg',
+      type: 'audio/ogg',
+    },
+  ];
 
-    for (const pi of <any>document.getElementsByTagName('p')) {
-      const p = document.createElement('output');
-      Object.assign(p.style, {
-        background: 'blue',
-        color: 'white',
-        padding: '5px',
-        fontSize: '11px',
-        opacity: 0.7,
-      });
-      pi.append(p);
-    }
+  youtubeSources = [
+    {
+      src: 'https://youtube.com/watch?v=bTqVqk7FSmY',
+      provider: 'youtube',
+    },
+  ];
 
-    function updateOutput() {
-      const html = document.documentElement;
-      el.value = `${html.clientWidth} × ${html.clientHeight}`;
+  vimeoSources = [
+    {
+      src: 'https://vimeo.com/76979871',
+      provider: 'vimeo',
+    },
+  ];
 
-      const h1fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h1')[0])
-          .getPropertyValue('font-size')
-      );
-      h1.value = `${h1fontSize}`;
+  videoSources: Plyr.Source[] = [
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
+      type: 'video/mp4',
+      size: 576,
+    },
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
+    },
+    {
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4',
+      type: 'video/mp4',
+      size: 1440,
+    },
+  ];
 
-      const h2fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h2')[0])
-          .getPropertyValue('font-size')
-      );
-      h2.value = `${h2fontSize}`;
+  poster =
+    'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg';
 
-      const h3fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h3')[0])
-          .getPropertyValue('font-size')
-      );
-      h3.value = `${h3fontSize}`;
-
-      const h4fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h4')[0])
-          .getPropertyValue('font-size')
-      );
-      h4.value = `${h4fontSize}`;
-
-      const h5fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h5')[0])
-          .getPropertyValue('font-size')
-      );
-      h5.value = `${h5fontSize}`;
-
-      const h6fontSize = parseFloat(
-        window
-          .getComputedStyle(document.getElementsByTagName('h6')[0])
-          .getPropertyValue('font-size')
-      );
-      h6.value = `${h6fontSize}`;
-
-      for (const pi of <any>document.getElementsByTagName('p')) {
-        const pfontSize = parseFloat(
-          window.getComputedStyle(pi).getPropertyValue('font-size')
-        );
-        pi.getElementsByTagName('output')[0].value = `${pfontSize}`;
-      }
-    }
-    window.addEventListener('resize', updateOutput);
-    updateOutput();
-  }
-
-  getLoremSentence() {
-    return faker.lorem.sentence();
-  }
-
-  getLoremParagrapth() {
-    return faker.lorem.paragraph();
-  }
-
-  getLoremParagrapths() {
-    return faker.lorem.paragraphs();
-  }
+  tracks = [
+    {
+      kind: 'captions',
+      label: 'English',
+      srclang: 'en',
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+      default: true,
+    },
+    {
+      kind: 'captions',
+      label: 'French',
+      srclang: 'fr',
+      src:
+        'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt',
+    },
+  ];
 }
