@@ -15,31 +15,26 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link href="//cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.0.0/quill.bubble.css" rel="stylesheet">
   </head>
-  <body class="hovered-scrollbar">
-    <div class="hovered-scrollbar--content">
-      <a id="back2Top" title="Back to top" href="#">&#10148;</a>
-      <app-root></app-root>
+  <body>
+    <div id="toolbar">
+      <button class="ql-bold">Bold</button>
+      <button class="ql-italic">Italic</button>
+    </div>
+
+    <div id="editor">
+      <p>Hello World!</p>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+  <script src="//cdn.quilljs.com/1.0.0/quill.min.js"></script>
+
   <script>
-    /*Scroll to top when arrow up clicked BEGIN*/
-    $(window).scroll(function () {
-      var height = $(window).scrollTop();
-      if (height > 100) {
-        $('#back2Top').fadeIn();
-      } else {
-        $('#back2Top').fadeOut();
-      }
+    var editor = new Quill('#editor', {
+      modules: { toolbar: '#toolbar' },
+      theme: 'bubble',
     });
-    $(document).ready(function () {
-      $('#back2Top').click(function (event) {
-        event.preventDefault();
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        return false;
-      });
-    });
-    /*Scroll to top when arrow up clicked END*/
   </script>
 </html>
