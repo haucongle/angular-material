@@ -11,10 +11,5 @@ import {DemoMaterialModule} from './shared/material/material.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    var editor = new Quill('#editor', {
-      modules: { toolbar: '#toolbar' },
-      theme: 'snow',
-    });
-  }
+  constructor() {}
 }
